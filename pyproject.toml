@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "umutron-steam-overlay"
+version = "0.1.0"
+description = "Steam launch wrapper that applies UmuTron fixes through a read-only overlay"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+umutron-steam-overlay = "umutron_steam_overlay.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/umutron_steam_overlay"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
